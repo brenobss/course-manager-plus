@@ -6,27 +6,38 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { StarModule } from '../shared/component/star/star.module';
 import { AppPipeModule } from '../shared/pipe/app-pipe.module';
+import { UserComponent } from '../userApp/user.component';
+import { CourseInfoUser } from './course-info-user.component';
+import { UserModule } from '../userApp/user.module';
 
 @NgModule({
     declarations: [
         CourseListComponent,
-        CourseInfoComponent
+        CourseInfoComponent,
+        UserComponent,
+        CourseInfoUser
     ], 
     imports: [
         CommonModule,
         FormsModule,
         StarModule,
         AppPipeModule,
+        UserModule,
         RouterModule.forChild([
             {
                 path: 'courses', component: CourseListComponent
             },
             {
                 path: 'courses/info/:id', component: CourseInfoComponent
+            },
+            {
+                path: 'courses/user', component: UserComponent
+            },
+            {
+                path: 'courses/info/user:id', component: CourseInfoUser
             }
         ])
     ]
 })
 export class CourseModule { 
-
 }

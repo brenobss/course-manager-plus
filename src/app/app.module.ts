@@ -14,6 +14,7 @@ import { Error404Compoennt } from './core/component/error-404/error-404.componen
   declarations: [
     AppComponent,
     Error404Compoennt
+
   ],
   imports: [
     BrowserModule,
